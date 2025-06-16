@@ -1,39 +1,359 @@
-  <!DOCTYPE html>
-  <html>
-  <head>
-      <title>JASD Property Analyzer Support</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <style>
-          body {
-              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-              max-width: 600px;
-              margin: 50px auto;
-              padding: 20px;
-              text-align: center;
-              line-height: 1.6;
-          }
-          .email {
-              font-size: 24px;
-              color: #007AFF;
-              text-decoration: none;
-              margin: 20px 0;
-              display: block;
-          }
-          .container {
-              background: #f5f5f7;
-              padding: 30px;
-              border-radius: 10px;
-          }
-      </style>
-  </head>
-  <body>
-      <div class="container">
-          <h1>JASD Property Analyzer Support</h1>
-          <p>For technical support or questions about the app, please contact us:</p>
-          <a href="mailto:jasd.supp@gmail.com" class="email">jasd.supp@gmail.com</a>
-          <p>We typically respond within 24-48 hours.</p>
-          <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
-          <p><small>JASD Property Analyzer - Professional UK Property Investment Calculator</small></p>
-      </div>
-  </body>
-  </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JASD Property Analyzer - Professional UK Property Investment Calculator</title>
+    <meta name="description" content="Professional property investment analysis app for UK investors. Real-time mortgage rates, LTV calculations, and comprehensive ROI analysis for Buy-to-Let, HMO, and more.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><polygon points="0,100 1000,0 1000,100"/></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+        .hero-content { position: relative; z-index: 1; }
+        .hero h1 { 
+            font-size: 48px; 
+            margin-bottom: 20px; 
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero p { 
+            font-size: 24px; 
+            margin-bottom: 30px; 
+            opacity: 0.95;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 80px 0;
+        }
+        .feature {
+            text-align: center;
+            padding: 40px 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .feature p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .stats {
+            background: #f8f9fa;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .stat h3 {
+            font-size: 36px;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .stat p {
+            color: #666;
+            font-size: 16px;
+        }
+        .cta {
+            background: #2c3e50;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .cta p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        .button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        .button:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+        .button.secondary {
+            background: transparent;
+            border: 2px solid white;
+            box-shadow: none;
+        }
+        .button.secondary:hover {
+            background: white;
+            color: #2c3e50;
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 50px 20px 30px;
+            text-align: center;
+        }
+        .footer-links {
+            margin-bottom: 30px;
+        }
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        .footer p {
+            color: #666;
+            font-size: 14px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        .investment-types {
+            background: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .investment-types h2 {
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .investment-type {
+            background: #f8f9fa;
+            padding: 30px 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        .investment-type h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .investment-type p {
+            color: #666;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 20px; }
+            .features { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .types-grid { grid-template-columns: 1fr; }
+            .footer-links a { display: block; margin: 10px 0; }
+        }
+        @media (max-width: 480px) {
+            .hero { padding: 60px 20px 40px; }
+            .hero h1 { font-size: 28px; }
+            .hero p { font-size: 18px; }
+            .container { padding: 15px; }
+            .features { margin: 40px 0; }
+            .feature { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>JASD Property Analyzer</h1>
+            <p>Professional UK Property Investment Calculator</p>
+            <a href="#features" class="button">Explore Features</a>
+            <a href="/support.html" class="button secondary">Get Support</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div style="text-align: center; margin: 60px 0;">
+            <h2 style="font-size: 42px; margin-bottom: 20px; color: #2c3e50;">
+                Make Smarter Property Investment Decisions
+            </h2>
+            <p style="font-size: 20px; color: #666; max-width: 800px; margin: 0 auto;">
+                Trusted by UK property investors for accurate ROI calculations, real-time mortgage rates, and comprehensive investment analysis
+            </p>
+        </div>
+
+        <div class="features" id="features">
+            <div class="feature">
+                <span class="feature-icon">🏠</span>
+                <h3>UK Address Integration</h3>
+                <p>Smart postcode lookup with real-time validation. Complete UK address database with auto-complete functionality for accurate property location.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">💰</span>
+                <h3>Dynamic Mortgage Rates</h3>
+                <p>Real-time Bank of England base rates with professional LTV-based risk calculations. Get accurate payment projections for any property type.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">📊</span>
+                <h3>Professional Analysis</h3>
+                <p>Instant ROI calculations for Buy-to-Let, HMO, Serviced Accommodation, Buy-to-Flip, and Rent-to-Rent investment strategies.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">💾</span>
+                <h3>Auto-Save Technology</h3>
+                <p>Never lose your work with intelligent auto-save that protects your data as you type. Visual feedback confirms every save.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">📱</span>
+                <h3>Works Offline</h3>
+                <p>All your property data stored securely on your device. Calculate returns anywhere, anytime, even without internet connection.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🌙</span>
+                <h3>Built for iOS</h3>
+                <p>Native iOS app with beautiful dark mode support, designed specifically for iPhone and iPad with premium user experience.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="container">
+            <h2 style="font-size: 36px; margin-bottom: 50px; color: #2c3e50;">Why Choose JASD?</h2>
+            <div class="stats-grid">
+                <div class="stat">
+                    <h3>Real-Time</h3>
+                    <p>Live mortgage rates from Bank of England</p>
+                </div>
+                <div class="stat">
+                    <h3>5 Types</h3>
+                    <p>Investment strategies supported</p>
+                </div>
+                <div class="stat">
+                    <h3>100% UK</h3>
+                    <p>Designed for British property market</p>
+                </div>
+                <div class="stat">
+                    <h3>Offline</h3>
+                    <p>Works without internet connection</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="investment-types">
+        <div class="container">
+            <h2>Supported Investment Strategies</h2>
+            <div class="types-grid">
+                <div class="investment-type">
+                    <h4>Buy-to-Let</h4>
+                    <p>Traditional rental property investment with comprehensive yield calculations</p>
+                </div>
+                <div class="investment-type">
+                    <h4>Buy-to-Flip</h4>
+                    <p>Purchase, renovate, and sell analysis with renovation cost tracking</p>
+                </div>
+                <div class="investment-type">
+                    <h4>HMO Properties</h4>
+                    <p>House in Multiple Occupation with multi-tenant income modeling</p>
+                </div>
+                <div class="investment-type">
+                    <h4>Serviced Accommodation</h4>
+                    <p>Short-term rental properties with seasonal rate variations</p>
+                </div>
+                <div class="investment-type">
+                    <h4>Rent-to-Rent</h4>
+                    <p>Subletting arrangements with guaranteed rent calculations</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div style="text-align: center; margin: 80px 0;">
+            <h2 style="font-size: 32px; margin-bottom: 30px; color: #2c3e50;">
+                Perfect For
+            </h2>
+            <p style="font-size: 18px; color: #666; max-width: 900px; margin: 0 auto; line-height: 1.8;">
+                <strong>Property Investors</strong> • <strong>Buy-to-Let Landlords</strong> • <strong>Estate Agents</strong> • <strong>Mortgage Brokers</strong> • <strong>Property Developers</strong> • <strong>Portfolio Managers</strong> • <strong>First-Time Investors</strong>
+            </p>
+        </div>
+    </div>
+
+    <div class="cta">
+        <h2>Start Analyzing Properties Like a Pro</h2>
+        <p>Join thousands of UK property investors making data-driven decisions</p>
+        <a href="#" class="button">Download on App Store</a>
+        <a href="/support.html" class="button secondary">Contact Support</a>
+    </div>
+
+    <div class="footer">
+        <div class="footer-links">
+            <a href="/support.html">Support</a>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Use</a>
+        </div>
+        <p>
+            © 2024 JASD Property Analyzer. All rights reserved.<br>
+            Professional property investment analysis tool for the UK market. Not financial advice - always consult qualified professionals for investment decisions.
+        </p>
+    </div>
+</body>
+</html>
